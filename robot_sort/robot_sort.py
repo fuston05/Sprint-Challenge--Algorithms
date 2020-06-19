@@ -94,29 +94,23 @@ class SortingRobot:
         """
         return self._light == "ON"
 
-    def steps_to_start(self):
-        for i in range(len(l)-1, -1, -1):
-            # already sorted
-            # print(l[i])
-            if l[i-1] != l[i]-1:
-                return i+1
-
-                
-
     def sort(self):
         """
         Sort the robot's list.
         """
         return self.index_to_start()
-        # 1 pick up 1st item,
-        # 2 move right
-        # 3 compare, take lowest item
-        # repeat 2 & 3 until end is reached,
-        # place lowest item at beginning of list
-        # now we have to make sure we go right and NOT grab an already sorted item
-            # move right
-            # compare.
-            # if right is less (then its in place)
+        # 1 start with 1st item [0],
+        # 2 move right, 
+            # look for smallest in list
+        # 3 compare,
+            # if next item is smaller
+                # swap, repeat step 2 & 3 until can't move right.
+        # 4 return to [0], now we're looking for the spot to place the smallest.
+            # compare. 
+                # if we hold the larger, then move right
+                # if we hold the smaller, 
+                    # then swap
+                        # move right, start search again for next smallest
         pass
 
 
